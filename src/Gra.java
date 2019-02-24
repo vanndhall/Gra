@@ -11,10 +11,10 @@ public class Gra {
 
         int x = getRandomInt();
         System.out.println("x = "+ x);
-        Wynik(x);
+       // Wynik(x);
+        getAutoBigger(x);
 
     }
-
 
     public static int getRandomInt(){
         Random random = new Random();
@@ -28,6 +28,9 @@ public class Gra {
 
     }
      public static void Wynik(int x){
+
+         //System.out.println(getAutoBigger(50));
+         //System.out.println(getAutoLower(50));
          int liczba = getUserValue();
 
 
@@ -44,21 +47,31 @@ public class Gra {
             System.out.println("Sukcess!");
 
      }
-//        public static int wyszukiwanieBinarne(int szukanaLiczba)
-//             {
-//         int lewo = 0, prawo = tablicaLiczb.length - 1, srodek = 0;
-//
-//        while(lewo <= prawo)
-//        {
-//            srodek = (lewo + prawo) / 2;
-//            if(tablicaLiczb[srodek] == szukanaLiczba)
-//                return srodek;
-//            else if(tablicaLiczb[srodek] < szukanaLiczba)
-//                lewo = srodek + 1;
-//            else
-//                prawo = srodek - 1;
-//        }
-//
-//        return -1; //jeżeli liczba nie została odnaleziona zwróć -1
-//    }
-}
+
+
+     //OPTYMALNIE UZYC Wyszukiwania binarnego
+        public static int getAutoBigger(int x)
+             {
+                 int wartosc = 50;
+                 if(wartosc <x) {
+
+                     wartosc = wartosc + (wartosc / 2 );
+                     System.out.println("wartość = " + wartosc +" jest mniejsza od szukanej");
+                     getAutoBigger(x);
+                 }
+                 else if(wartosc >x) {
+                     wartosc = wartosc - (wartosc / 2);
+                     System.out.println("wartość = " + wartosc + " jest większa od szukanej");
+                     getAutoBigger(x);
+                 }
+                     else
+                         System.out.println("sukcess");
+
+                    return wartosc;
+
+            }
+
+
+
+    }
+
