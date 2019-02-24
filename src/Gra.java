@@ -53,7 +53,7 @@ public class Gra {
         public static int getAutoBigger(int x)
              {
                  int wartosc = 50;
-                 if(wartosc <x) {
+                 if(wartosc < x) {
 
                      wartosc = wartosc + (wartosc / 2 );
                      System.out.println("wartość = " + wartosc +" jest mniejsza od szukanej");
